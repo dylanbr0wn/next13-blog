@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
-    "build": "next build",
+    "dev": "concurrently \"next dev\" \"tailwindcss --input styles/globals.css --output styles/twind.css --watch\"",
+    "build": "tailwindcss input.css --output output.css && next build",
     "start": "next start",
     "lint": "next lint",
     "tailwind": "tailwindcss -i styles/globals.css -o styles/dist.css",
@@ -19,6 +19,7 @@
     "clsx": "1.2.1",
     "concurrently": "7.5.0",
     "next": "latest",
+    "outstatic": "0.0.29-rc",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "6.0.0-beta.2",
